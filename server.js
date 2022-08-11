@@ -36,6 +36,8 @@ app.get('/', async (request, response) => {
 })
 
 app.post('/addTodo', (request, response) => {
+    // console.log(request)
+    // console.log(request.body)
     db.collection('todos')
         .insertOne({ thing: request.body.todoItem, completed: false })
         .then((result) => {
