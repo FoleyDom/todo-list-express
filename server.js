@@ -90,6 +90,7 @@ app.put('/markUnComplete', (request, response) => {
 })
 
 app.delete('/deleteItem', (request, response) => {
+    //Delete item
     db.collection('todos')
         .deleteOne({ thing: request.body.itemFromJS })
         .then((result) => {
